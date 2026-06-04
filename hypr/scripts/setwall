@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WALL="$HOME/Pictures/wallpapers/$1"
+
+awww img "$WALL"
+
+echo "$WALL" > "$HOME/.config/hypr/current_wallpaper"

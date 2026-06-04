@@ -1,0 +1,121 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+  "modules-left": ["clock", "hyprland/workspaces", "tray"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    //"custom/updates",
+    "temperature",
+    "memory",
+    "cpu",
+    "pulseaudio",
+    "battery",
+    "custom/nightmode",
+    "custom/bluetooth",
+    "custom/transparency",
+    "network",
+    "custom/powermenu"
+  ],
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
+  },
+  "clock": {
+    // 24 hour
+    // "format": " {:%H:%M} ",
+    // 12 hour
+    "format": " 󰸗 {:%I:%M %p} ",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%d %B %H:%M}"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "separate-outputs": false,
+    "active-only": false,
+    // turn on true to show same all workspaces on each monitor
+    "all-outputs": false,
+    "sort-by": "number",
+    "format-icons": {
+      // 1-10
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+     
+    }
+  },
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "custom/updates": {
+    "exec": "bash -lc 'r=$(checkupdates 2>/dev/null | wc -l); a=$(paru -Qua 2>/dev/null | wc -l); [ $((r+a)) -gt 0 ] && printf \"󰏗   \" || printf \"󰏗   \"'",
+    "interval": 600,
+    "tooltip": true,
+    "tooltip-format": "Left click: update (paru -Syyu --noconfirm)",
+    "on-click": "kitty -e bash -lc 'paru -Syyu --noconfirm'"
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-icons": ["", "", ""]
+  },
+  "memory": {
+    "format": "󰫗 {}% ",
+    "tooltip": "false"
+  },
+  "cpu": {
+    "format": " {usage}% ",
+    "tooltip": "false"
+  },
+  "pulseaudio": {
+    "format": " {volume}% ",
+    "scroll-step": 2,
+    "on-click": "pavucontrol"
+  },
+  //"custom/nightmode": {
+  //  "exec": "bash -lc '~/.config/waybar/scripts/hyprsunset.sh status'",
+  //  "return-type": "json",
+  //  "interval": 2,
+  //  "tooltip": true,
+  //  "on-click": "bash -lc '~/.config/waybar/scripts/hyprsunset.sh toggle'"
+  //},
+  "custom/bluetooth": {
+    "exec": "echo \"󰂯 \"",
+    "interval": 0,
+    "tooltip": true,
+    "tooltip-format": "Bluetooth",
+    "on-click": "blueman-manager",
+    "on-click-right": "blueman-adapters"
+  },
+  "custom/transparency": {
+  "exec": "~/.config/waybar/scripts/transparency.sh",
+  "return-type": "json",
+  "interval": 1,
+  "on-click": "~/.config/waybar/scripts/transparency.sh toggle",
+  "tooltip": true
+},
+  "network": {
+    "format": "󰖩 ",
+    "tooltip-format": "{essid}",
+    "interval": 2,
+    "on-click": "kitty -e nmtui"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": [" ", " ", " ", " ", " "]
+  },
+  "custom/powermenu": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+  }
+}
