@@ -4,6 +4,10 @@ My personal Hyprland setup for EndeavourOS.
 
 A clean, keyboard-driven desktop focused on programming, terminal workflows, and minimal distractions.
 
+## Screenshot
+
+![Desktop](screenshots/desktop.png)
+
 ## Components
 
 - Hyprland
