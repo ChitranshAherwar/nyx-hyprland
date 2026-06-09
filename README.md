@@ -20,6 +20,24 @@ A clean, keyboard-driven desktop focused on programming, terminal workflows, and
 - Starship
 - Catppuccin Mocha
 
+## Binds
+
+- Wofi: SUPER + D
+- Dolphin: SUPER + E
+- Terminal: SUPER + return
+- Fullscreen: SUPER + F
+- Killactive: SUPER + SHIFT + Q
+- Toggle floating: SUPER + V
+- Focus: SUPER + left, right, up, down
+- Area Screenshot: printscreen
+- Full Screenshot: SHIFT + printscreen
+- Area Screenshot Clipboard: CTRL + printscreen
+- Move window: SUPER + mouse1
+- Resize window: SUPER + mouse2
+- Workspaces: SUPER + 1-0 (1-10)
+- Move window between Workspaces: SUPER + SHIFT + 1-0 (1-10)
+
+
 ## Features
 
 - Rounded corners and blur
