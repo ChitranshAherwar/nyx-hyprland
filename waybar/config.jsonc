@@ -11,8 +11,6 @@
     "cpu",
     "pulseaudio",
     "battery",
-    "custom/nightmode",
-    "custom/bluetooth",
     "custom/transparency",
     "network",
     "custom/powermenu"
@@ -69,7 +67,7 @@
     "format-icons": ["", "", ""]
   },
   "memory": {
-    "format": "󰫗 {}% ",
+    "format": "󰫗 {used:0.1f}G/{total:0.1f}G ",
     "tooltip": "false"
   },
   "cpu": {
@@ -110,9 +108,34 @@
     "on-click": "kitty -e nmtui"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": [" ", " ", " ", " ", " "]
+  "states": {
+    "good": 80,
+    "warning": 40,
+    "critical": 15
   },
+
+  "format": "{capacity}% {icon}",
+  "format-charging": "{capacity}% {icon}",
+  "format-plugged": " {capacity}%",
+
+  "format-icons": {
+    "default": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+
+    "charging": [
+      "󰢜",
+      "󰂆",
+      "󰂇",
+      "󰂈",
+      "󰢝"
+    ]
+  }
+},
   "custom/powermenu": {
     "format": "  ",
     "tooltip": false,
