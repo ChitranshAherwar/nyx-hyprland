@@ -7,3 +7,4 @@ alias cat="bat"
 alias wall="~/.config/hypr/scripts/setwall"
 starship init fish | source
 end
+alias popww="~/Games/scripts/popww.sh"

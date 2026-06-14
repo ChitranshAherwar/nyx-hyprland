@@ -5,14 +5,17 @@
   "modules-left": ["clock", "hyprland/workspaces", "tray"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    //"custom/updates",
-    "temperature",
+
+    //"temperature",
+    "custom/temperature",
     "memory",
-    "cpu",
+    //"cpu",
     "pulseaudio",
     "battery",
     "custom/transparency",
     "network",
+    //"custom/nightmode",
+    "custom/powerprofile",
     "custom/powermenu"
   ],
   "tray": {
@@ -53,21 +56,16 @@
   "hyprland/window": {
     "format": "{}"
   },
-  "custom/updates": {
-    "exec": "bash -lc 'r=$(checkupdates 2>/dev/null | wc -l); a=$(paru -Qua 2>/dev/null | wc -l); [ $((r+a)) -gt 0 ] && printf \"󰏗   \" || printf \"󰏗   \"'",
-    "interval": 600,
-    "tooltip": true,
-    "tooltip-format": "Left click: update (paru -Syyu --noconfirm)",
-    "on-click": "kitty -e bash -lc 'paru -Syyu --noconfirm'"
-  },
-  "temperature": {
-    "format": "{icon} {temperatureC}°C ",
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-icons": ["", "", ""]
-  },
+
+  "custom/temperature": {
+    "exec": "~/.config/waybar/scripts/temperature.sh",
+    "return-type": "json",
+    "interval": 5
+},
+
   "memory": {
-    "format": "󰫗 {used:0.1f}G/{total:0.1f}G ",
+    //"format": "󰫗 {used:0.1f}G/{total:0.1f}G ", this shows used/total.
+    "format": "󰫗 {used:0.1f}G", // this shows used.
     "tooltip": "false"
   },
   "cpu": {
@@ -79,13 +77,13 @@
     "scroll-step": 2,
     "on-click": "pavucontrol"
   },
-  //"custom/nightmode": {
-  //  "exec": "bash -lc '~/.config/waybar/scripts/hyprsunset.sh status'",
+  // "custom/nightmode": {
+  //  "exec": "~/.config/waybar/scripts/hyprsunset.sh status",
   //  "return-type": "json",
   //  "interval": 2,
   //  "tooltip": true,
-  //  "on-click": "bash -lc '~/.config/waybar/scripts/hyprsunset.sh toggle'"
-  //},
+  //  "on-click": "~/.config/waybar/scripts/hyprsunset.sh toggle"
+  // },
   "custom/bluetooth": {
     "exec": "echo \"󰂯 \"",
     "interval": 0,
@@ -111,7 +109,7 @@
   "states": {
     "good": 80,
     "warning": 40,
-    "critical": 15
+    "critical": 20
   },
 
   "format": "{capacity}% {icon}",
@@ -135,6 +133,12 @@
       "󰢝"
     ]
   }
+},
+
+"custom/powerprofile": {
+    "exec": "~/.config/waybar/scripts/powerprofile.sh",
+    "interval": 1,
+    "on-click": "~/.config/waybar/scripts/toggle-powerprofile.sh"
 },
   "custom/powermenu": {
     "format": "  ",

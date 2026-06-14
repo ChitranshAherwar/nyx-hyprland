@@ -4,7 +4,7 @@ STATE="/tmp/hypr-transparent"
 
 if [ "$1" = "toggle" ]; then
     if [ -f "$STATE" ]; then
-        hyprctl keyword decoration:active_opacity 0.98
+        hyprctl keyword decoration:active_opacity 0.95
         hyprctl keyword decoration:inactive_opacity 0.85
         rm "$STATE"
     else
