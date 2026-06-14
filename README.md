@@ -2,7 +2,7 @@
 
 My personal Hyprland setup for EndeavourOS.
 
-A clean, keyboard-driven desktop focused on programming, terminal workflows, and minimal distractions.
+A keyboard-driven desktop focused on programming, terminal workflows, learning Linux, and minimal distractions.
 
 ## Screenshot
 
@@ -10,44 +10,59 @@ A clean, keyboard-driven desktop focused on programming, terminal workflows, and
 
 ## Components
 
-- Hyprland
-- Waybar
-- Kitty
-- Wofi
-- Hyprlock
-- Hypridle
-- Fish
-- Starship
-- Catppuccin Mocha
+* Hyprland
+* Waybar
+* Kitty
+* Wofi
+* Dolphin
+* Hyprlock
+* Hypridle
+* Fish
+* Starship
+* Catppuccin Mocha
 
-## Binds
+## Keybinds
 
-- Wofi: SUPER + D
-- Dolphin: SUPER + E
-- Terminal: SUPER + return
-- Fullscreen: SUPER + F
-- Killactive: SUPER + SHIFT + Q
-- Toggle floating: SUPER + V
-- Focus: SUPER + left, right, up, down
-- Area Screenshot: printscreen
-- Full Screenshot: SHIFT + printscreen
-- Area Screenshot Clipboard: CTRL + printscreen
-- Move window: SUPER + mouse1
-- Resize window: SUPER + mouse2
-- Workspaces: SUPER + 1-0 (1-10)
-- Move window between Workspaces: SUPER + SHIFT + 1-0 (1-10)
+### Applications
 
+* Launcher (Wofi): `SUPER + D`
+* Terminal (Kitty): `SUPER + Return`
+* File Manager (Dolphin): `SUPER + E`
+
+### Window Management
+
+* Fullscreen: `SUPER + F`
+* Kill Active Window: `SUPER + SHIFT + Q`
+* Toggle Floating: `SUPER + V`
+* Move Window: `SUPER + Mouse1`
+* Resize Window: `SUPER + Mouse2`
+
+### Navigation
+
+* Focus Window: `SUPER + Arrow Keys`
+* Workspace Switch: `SUPER + 1-0`
+* Move Window to Workspace: `SUPER + SHIFT + 1-0`
+
+### Screenshots
+
+* Area Screenshot: `Print`
+* Full Screenshot: `SHIFT + Print`
+* Area Screenshot to Clipboard: `CTRL + Print`
 
 ## Features
 
-- Rounded corners and blur
-- Opacity toggle from Waybar
-- Natural touchpad scrolling
-- Workspace navigation
-- Custom wallpaper loader
-- Hyprlock + Hypridle integration
+* Rounded corners and blur
+* Catppuccin Mocha theme
+* Waybar integration
+* Natural touchpad scrolling
+* Workspace navigation
+* Custom wallpaper loader
+* Hyprlock + Hypridle integration
+* Fish + Starship terminal workflow
 
 ## Installation
+
+Clone the repository:
 
 ```bash
 git clone git@github.com:ChitranshAherwar/nyx-hyprland.git
@@ -58,6 +73,10 @@ Copy the required files into:
 ```text
 ~/.config/hypr
 ~/.config/waybar
+~/.config/kitty
+~/.config/fish
+~/.config/hyprlock
+~/.config/hypridle
 ```
 
 Reload Hyprland:
@@ -69,5 +88,7 @@ hyprctl reload
 ## Notes
 
 This repository serves as both a backup and a record of my migration from i3wm to Hyprland.
+
+It evolves as I learn Linux, shell scripting, Git, and desktop customization.
 
 If something breaks, it was probably working five minutes ago.
