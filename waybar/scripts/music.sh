@@ -9,8 +9,9 @@ status=$(playerctl status 2>/dev/null)
 if [[ "$status" == "Playing" ]]; then
     title=$(playerctl metadata title 2>/dev/null)
 
-    # Remove YouTube Music suffix
-    title="${title% | YouTube Music}"
+
+    # Remove YouTube branding suffixes
+    title=$(echo "$title" | sed -E 's/[[:space:]]*[\|\-][[:space:]]*YouTube( Music)?$//')
 
     # Only cache real titles
     if [[ -n "$title" &&

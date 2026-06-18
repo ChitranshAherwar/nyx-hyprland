@@ -140,11 +140,14 @@ window#waybar {
 }*/
 
 #battery.warning {
-    color: #e0af68;
+    color: #fab387;
+    background: rgba(255,255,255,0.08);
+
 }
 
 #battery.critical {
-    color: #f38ba8;
+    color: #f7768e;
+    background: rgba(255,255,255,0.08);
 }
 
 
@@ -154,6 +157,7 @@ window#waybar {
     border-left: 1px solid rgba(255,255,255,0.14);
     border-right: 1px solid rgba(255,255,255,0.14);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.08);
 
     border-radius: 14px;
 
@@ -173,10 +177,12 @@ window#waybar {
     border-left: 1px solid rgba(255,255,255,0.14);
     border-right: 1px solid rgba(255,255,255,0.14);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.08);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
     border-radius: 14px;
 
-    color: #e0af68;
+    color: #fab387;
 
     padding: 0 14px;
     margin: 4px 6px;
@@ -192,10 +198,11 @@ window#waybar {
     border-left: 1px solid rgba(255,255,255,0.14);
     border-right: 1px solid rgba(255,255,255,0.14);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.08);
 
     border-radius: 14px;
 
-    color: #f38ba8;
+    color: #f7768e;
 
     padding: 0 14px;
     margin: 4px 6px;

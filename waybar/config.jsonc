@@ -49,7 +49,7 @@
     "format": "{icon}",
     "separate-outputs": false,
     "active-only": false,
-    // turn on true to show same all workspaces on each monitor
+    // turn on true to show same all workspaces on each monitor.
     "all-outputs": false,
     "sort-by": "number",
     "format-icons": {
@@ -91,13 +91,6 @@
     "scroll-step": 2,
     "on-click": "pavucontrol"
   },
-  // "custom/nightmode": {
-  //  "exec": "~/.config/waybar/scripts/hyprsunset.sh status",
-  //  "return-type": "json",
-  //  "interval": 2,
-  //  "tooltip": true,
-  //  "on-click": "~/.config/waybar/scripts/hyprsunset.sh toggle"
-  // },
   "custom/bluetooth": {
     "exec": "echo \"󰂯 \"",
     "interval": 0,
