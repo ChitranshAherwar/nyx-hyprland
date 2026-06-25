@@ -279,6 +279,11 @@ tooltip {
         0 2px 8px rgba(0,0,0,0.15);
 }
 
+#custom-logo {
+    color: #c0caf5;
+    padding: 0 14px;
+}
+
 tooltip label {
     color: #ffffff;
 }

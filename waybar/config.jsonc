@@ -3,7 +3,7 @@
   "position": "top",
   "margin-bottom": 0,
   "modules-left": ["clock", "hyprland/workspaces", "tray", "custom/music"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": ["custom/logo"],
   "modules-right": [
 
     //"temperature",
@@ -67,9 +67,15 @@
      
     }
   },
-  "hyprland/window": {
-    "format": "{}"
+
+  "custom/logo": {
+   "format": "<span font='18'> 󰣇 </span>"
+    //"format": "󰣇 "
   },
+
+  // "hyprland/window": {
+  //   "format": "{class}"
+  // },
 
   "custom/temperature": {
     "exec": "~/.config/waybar/scripts/temperature.sh",
