@@ -47,6 +47,7 @@
   },
   "hyprland/workspaces": {
     "format": "{icon}",
+    "on-click": "activate",
     "separate-outputs": false,
     "active-only": false,
     // turn on true to show same all workspaces on each monitor.

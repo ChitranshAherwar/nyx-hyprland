@@ -1,0 +1,30 @@
+Hyprland Lua migration
+======================
+
+Target: Hyprland 0.56.2
+
+Migrated:
+- hyprland.conf -> hyprland.lua
+- binds.conf -> hyprland.lua
+- monitors
+- workspace-to-monitor rules
+- window rules
+- environment variables
+- autostart
+- general/decorations/input
+- keyboard, mouse, screenshot, workspace, media and brightness binds
+
+Left as .conf:
+- hypridle.conf
+- hyprlock.conf
+- hyprpaper.conf
+
+Not included in supplied archive:
+- ~/.config/hypremoji.old/hypremoji.conf
+
+Backups:
+- hyprland.conf.bak
+- binds.conf.bak
+- hyprland.lua.bak
+
+The original scripts/assets are preserved unchanged.

@@ -4,12 +4,10 @@ STATE="/tmp/hypr-transparent"
 
 if [ "$1" = "toggle" ]; then
     if [ -f "$STATE" ]; then
-        hyprctl keyword decoration:active_opacity 0.95
-        hyprctl keyword decoration:inactive_opacity 0.85
+        hyprctl eval 'hl.config({ decoration = { active_opacity = 0.95, inactive_opacity = 0.85 } })'
         rm "$STATE"
     else
-        hyprctl keyword decoration:active_opacity 1.0
-        hyprctl keyword decoration:inactive_opacity 1.0
+        hyprctl eval 'hl.config({ decoration = { active_opacity = 1.0, inactive_opacity = 1.0 } })'
         touch "$STATE"
     fi
 fi
