@@ -179,6 +179,8 @@ hl.bind("SUPER + ALT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+-- Toggle tablet screen. Comment out if you dont use tablet.
+hl.bind("SUPER + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/tablet-mode toggle"))
 
 -- ======================
 -- WORKSPACE KEYBINDS

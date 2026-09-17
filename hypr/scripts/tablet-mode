@@ -1,0 +1,35 @@
+#!/bin/bash
+
+STATE="$HOME/.config/hypr/scripts/.tablet-mode"
+
+case "$1" in
+    toggle)
+        if [[ -f "$STATE" ]] && [[ "$(cat "$STATE")" == "both" ]]; then
+            hyprctl eval 'hl.config({ input = { tablet = { output = "eDP-1" } } })'
+            echo "single" > "$STATE"
+            notify-send "Tablet: Single"
+        else
+            hyprctl eval 'hl.config({ input = { tablet = { output = "" } } })'
+            echo "both" > "$STATE"
+            notify-send "Tablet: Both"
+        fi
+        ;;
+
+    single)
+        hyprctl eval 'hl.config({ input = { tablet = { output = "eDP-1" } } })'
+        echo "single" > "$STATE"
+        ;;
+
+    both)
+        hyprctl eval 'hl.config({ input = { tablet = { output = "" } } })'
+        echo "both" > "$STATE"
+        ;;
+
+    status)
+        if [[ -f "$STATE" ]]; then
+            cat "$STATE"
+        else
+            echo "single"
+        fi
+        ;;
+esac
