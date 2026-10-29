@@ -179,6 +179,7 @@ Nyx contains a few machine-specific and personal settings that may need to be ch
 - **Wallpaper state:** `hypr/current_wallpaper` stores the currently selected wallpaper path.
 - **Transparency:** The transparency toggle is currently disabled because changing window opacity caused focus issues. If you want to experiment with it, adjust the opacity values in the relevant script/configuration.
 - **Tablet mode:** The tablet configuration assumes the display `eDP-1` and may need to be changed for another machine. Tablet mode is for drawing tablet.
+- **Transparency:** Transparency is currently disabled because translucent windows made it harder to focus on the screen. The opacity configuration is still present if you want to experiment with transparency again.
 
 Nyx is a personal configuration, so some paths, applications, monitor names, and aliases will need to be adapted to the system it is installed on.
 
