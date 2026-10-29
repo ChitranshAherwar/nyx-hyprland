@@ -14,18 +14,32 @@ It's also a place where I experiment. As I learn more about Linux, shell scripti
 
 ## Components
 
+### Desktop
+
 - Hyprland
 - Waybar
-- Kitty
-- Wofi
-- Dolphin
 - Hyprlock
 - Hypridle
+
+### Applications
+
+- Kitty
+- Dolphin
+- Wofi
+- Notepad Next
+
+### Utilities
+
+- rofimoji
+- eza
+
+### Shell
+
 - Fish
 - Starship
-- eza
-- Notepad Next
-- rofimoji
+
+### Theme
+
 - Catppuccin Mocha
 
 ## Keybinds
@@ -84,28 +98,89 @@ It's also a place where I experiment. As I learn more about Linux, shell scripti
 
 ## Installation
 
+Nyx is intended for a Hyprland/Wayland system. Install the applications and utilities used by the configuration, then copy the configuration directories into `~/.config`.
+
+### Dependencies
+
+Nyx uses the following applications and utilities:
+
+- Hyprland
+- Waybar
+- Kitty
+- Fish
+- Hyprlock
+- Hypridle
+- Mako
+- Fusuma
+- awww
+- Wofi
+- eza
+- bat
+- Starship
+- zoxide
+- playerctl
+- NetworkManager
+- WirePlumber
+- power-profiles-daemon
+- grim
+- slurp
+- wl-clipboard
+- brightnessctl
+- libnotify
+- pavucontrol
+- wlogout
+- hyprsunset
+- rofimoji
+- Dolphin
+- VS Code
+- Notepad Next
+- Neovim
+
+Some of these are only used by specific features or shortcuts. For example, `wlogout` is used by the power menu in Waybar, `playerctl` is used by the music widget, and `rofimoji` is used by the emoji picker.
+
+### Install
+
 Clone the repository:
 
 ```bash
 git clone git@github.com:ChitranshAherwar/nyx-hyprland.git
+cd nyx-hyprland
 ```
 
-Copy the required configuration directories into:
+Copy the configuration directories into `~/.config`:
 
-```text
-~/.config/hypr
-~/.config/waybar
-~/.config/kitty
-~/.config/fish
-~/.config/hyprlock
-~/.config/hypridle
+```bash
+cp -r hypr waybar kitty fish wofi mako fusuma nvim ~/.config/
 ```
 
-Reload Hyprland:
+Make the custom scripts executable:
+
+```bash
+chmod +x ~/.config/hypr/scripts/*
+chmod +x ~/.config/waybar/scripts/*
+```
+
+Restart Hyprland or reload the configuration:
 
 ```bash
 hyprctl reload
 ```
+
+### Personal Configuration
+
+Nyx contains a few machine-specific and personal settings that may need to be changed when using it on another system.
+
+- **Monitors:** Monitor names, resolutions, positions, and workspace assignments are defined in `hypr/hyprland.lua`.
+- **Wallpapers:** Wallpaper paths are based on the user's home directory and wallpaper location.
+- **Dolphin launcher:** `SUPER + E` uses `~/.local/bin/dolphin-launch`, which is not included in this repository.
+- **Scratchpad:** The scratchpad opens `~/Documents/scratchpad.txt`.
+- **Fish aliases:** Some aliases are personal conveniences and are not required by Nyx. For example, `popww` points to a personal script for launching a game.
+- **Applications:** Some keybinds expect applications such as VS Code, Dolphin, and Notepad Next to be installed.
+- **Wallpaper state:** `hypr/current_wallpaper` stores the currently selected wallpaper path.
+- **Transparency:** The transparency toggle is currently disabled because changing window opacity caused focus issues. If you want to experiment with it, adjust the opacity values in the relevant script/configuration.
+- **Tablet mode:** The tablet configuration assumes the display `eDP-1` and may need to be changed for another machine. Tablet mode is for drawing tablet.
+
+Nyx is a personal configuration, so some paths, applications, monitor names, and aliases will need to be adapted to the system it is installed on.
 
 ## Notes
 
