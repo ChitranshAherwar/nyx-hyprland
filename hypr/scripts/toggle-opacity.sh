@@ -5,8 +5,8 @@ STATE="/tmp/hypr-opacity"
 if [ -f "$STATE" ]; then
     hyprctl eval 'hl.config({
         decoration = {
-            active_opacity = 0.98,
-            inactive_opacity = 0.85
+            active_opacity = 1.0,
+            inactive_opacity = 1.0
         }
     })'
     rm "$STATE"

@@ -12,7 +12,7 @@
     //"cpu",
     "pulseaudio",
     "battery",
-    "custom/transparency",
+    // "custom/transparency",
     "network",
     //"custom/nightmode",
     "custom/powerprofile",

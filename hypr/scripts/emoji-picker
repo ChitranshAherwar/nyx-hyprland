@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rofimoji --use-icons \
+    --selector-args="-theme $HOME/.config/rofimoji/grid-icons-only.rasi -theme-str 'listview { columns: 8; lines: 6; }'"
+
